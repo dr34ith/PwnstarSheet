@@ -1,0 +1,1031 @@
+﻿
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PwnStarTools</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+<div id="landing">
+  <div class="l-noise"></div>
+  <div class="l-top">
+    <div class="l-brand">Pwnstars</div>
+    <div class="l-version"> Neutron Team PH</div>
+  </div>
+  <nav class="l-nav">
+    <a href="#">Recon &amp; OSINT</a>
+    <a href="#" class="active">Web Exploitation</a>
+    <a href="#">Binary &amp; Pwn</a>
+    <a href="#">Cryptography</a>
+    <a href="#">Forensics</a>
+  </nav>
+  <div class="l-shapes">
+    <div class="shape-diamond"></div>
+    <div class="shape-bar"></div>
+  </div>
+  <svg class="l-circuit" viewBox="0 0 360 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#111" stroke-width=".7" opacity=".7">
+      <line x1="180" y1="170" x2="360" y2="0"/><line x1="180" y1="170" x2="330" y2="45"/>
+      <line x1="180" y1="170" x2="315" y2="95"/><line x1="180" y1="170" x2="345" y2="135"/>
+      <line x1="180" y1="170" x2="360" y2="185"/><line x1="180" y1="170" x2="310" y2="265"/>
+      <line x1="180" y1="170" x2="250" y2="320"/><line x1="180" y1="170" x2="180" y2="340"/>
+      <line x1="180" y1="170" x2="95" y2="310"/><line x1="180" y1="170" x2="20" y2="265"/>
+      <line x1="180" y1="170" x2="0" y2="210"/><line x1="180" y1="170" x2="10" y2="145"/>
+      <line x1="180" y1="170" x2="30" y2="80"/><line x1="180" y1="170" x2="85" y2="20"/>
+      <line x1="180" y1="170" x2="155" y2="0"/><line x1="180" y1="170" x2="240" y2="12"/>
+    </g>
+    <g fill="none" stroke="#111" stroke-width=".8">
+      <circle cx="280" cy="65" r="4"/><circle cx="320" cy="115" r="2.5"/>
+      <circle cx="335" cy="165" r="3"/><circle cx="270" cy="250" r="2.5"/>
+      <circle cx="60" cy="240" r="3"/><circle cx="90" cy="50" r="2"/>
+    </g>
+    <g fill="#111"><circle cx="180" cy="170" r="4.5"/></g>
+    <line x1="180" y1="170" x2="360" y2="82" stroke="#111" stroke-width="1.2"/>
+  </svg>
+  <div class="l-hero">
+    <span class="l-hero-w1">PWN</span>
+    <span class="l-hero-w2">STARS</span>
+  </div>
+  <div class="l-line"></div>
+  <button class="l-enter" onclick="enterApp()">
+    <span>ENTER<br>PWN</span>
+  </button>
+  <div class="l-desc">
+    <p>Team Neutron's CTF workbench. References, decoders, AI analysis, scripts, task board. Built for speed under pressure.</p>
+    <a onclick="showTeam()">Meet the team &darr;</a>
+  </div>
+  <div class="l-stats">
+    <div><div class="l-stat-label">Categories</div><div class="l-stat-val">9 domains</div></div>
+    <div><div class="l-stat-label">Tools indexed</div><div class="l-stat-val">233+</div></div>
+    <div><div class="l-stat-label">Team</div><div class="l-stat-val">Meiji &middot; Kiyoww &middot; Dreaith &middot; Tosho</div></div>
+  </div>
+  <div class="l-scroll-hint" onclick="showTeam()">
+    <span>Team</span>
+    <div class="l-scroll-arrow"></div>
+  </div>
+  <!-- TEAM SECTION -->
+  <div class="l-team-section" id="teamSection">
+    <button class="l-team-back" onclick="hideTeam()">&#8593; Back</button>
+    <div class="l-team-title">Neutron Team</div>
+    <div class="l-team-sub">PH &middot; CTF Division</div>
+    <div class="l-team-grid">
+      <div class="l-member-card">
+        <div class="l-member-avatar" style="background:#e8001c;">
+          <div class="l-captain-badge">C</div>
+          <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="16" r="9" fill="rgba(255,255,255,0.9)"/><path d="M6 42c0-9.94 8.06-18 18-18s18 8.06 18 18" fill="rgba(255,255,255,0.9)"/><circle cx="36" cy="12" r="4" fill="rgba(255,255,255,.5)"/><line x1="36" y1="4" x2="36" y2="8" stroke="rgba(255,255,255,.7)" stroke-width="1.5"/><line x1="44" y1="12" x2="40" y2="12" stroke="rgba(255,255,255,.7)" stroke-width="1.5"/></svg>
+        </div>
+        <div class="l-member-name">Meiji</div>
+        <div class="l-member-role">Captain</div>
+        <div class="l-member-badge">OSINT &middot; Crypto &middot; RE</div>
+        <div class="l-member-quote">"The map is everything. If it exists, I'll find it."</div>
+      </div>
+      <div class="l-member-card">
+        <div class="l-member-avatar" style="background:#1a1a2e;">
+          <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="16" r="9" fill="rgba(255,255,255,0.9)"/><path d="M6 42c0-9.94 8.06-18 18-18s18 8.06 18 18" fill="rgba(255,255,255,0.9)"/><text x="30" y="26" font-size="10" fill="#f0c040" font-family="monospace" font-weight="bold">JS</text></svg>
+        </div>
+        <div class="l-member-name">Kiyoww</div>
+        <div class="l-member-role">Web Specialist</div>
+        <div class="l-member-badge">Web &middot; MISC &middot; JS</div>
+        <div class="l-member-quote">"If it runs JavaScript, I own it."</div>
+      </div>
+      <div class="l-member-card">
+        <div class="l-member-avatar" style="background:#6d28d9;">
+          <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="16" r="9" fill="rgba(255,255,255,0.9)"/><path d="M6 42c0-9.94 8.06-18 18-18s18 8.06 18 18" fill="rgba(255,255,255,0.9)"/><text x="32" y="27" font-size="13" fill="#ffd6f0">&#10024;</text></svg>
+        </div>
+        <div class="l-member-name">Dreaith</div>
+        <div class="l-member-role">Forensics &middot; Web &middot; âœ¨</div>
+        <div class="l-member-badge">Forensics &middot; Web</div>
+        <div class="l-member-quote">"Every file has a secret. I find them."</div>
+      </div>
+      <div class="l-member-card">
+        <div class="l-member-avatar" style="background:#0a0a0a;">
+          <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="16" r="9" fill="rgba(255,255,255,0.9)"/><path d="M6 42c0-9.94 8.06-18 18-18s18 8.06 18 18" fill="rgba(255,255,255,0.9)"/><text x="28" y="27" font-size="9" fill="#4ade80" font-family="monospace">0x41</text></svg>
+        </div>
+        <div class="l-member-name">Tosho</div>
+        <div class="l-member-role">RE &middot; Binary Exploitation</div>
+        <div class="l-member-badge">RE &middot; Pwn</div>
+        <div class="l-member-quote">"I speak machine code fluently."</div>
+      </div>
+    </div>
+    <button onclick="enterApp()" style="margin-top:40px;padding:.65rem 2rem;border-radius:99px;background:#e8001c;color:#fff;border:none;font-size:13px;font-weight:700;cursor:pointer;letter-spacing:.04em;">Enter Workbench &rarr;</button>
+  </div>
+</div>
+
+<!-- FLOATING BUTTONS -->
+<button class="notes-toggle-btn" id="notesToggle" onclick="toggleNotes()" title="Notes">&#9998;</button>
+<button class="cmd-explain-btn" id="cmdExplainBtn" onclick="toggleCmdExplain()" title="Explain a command">?</button>
+<div class="shortcuts-chip">
+  <span><kbd>Ctrl</kbd>+<kbd>K</kbd> Search</span>
+  <span><kbd>Ctrl</kbd>+<kbd>S</kbd> Export notes</span>
+  <span><kbd>Esc</kbd> Close</span>
+</div>
+
+<!-- NOTES PANEL -->
+<div class="notes-panel" id="notesPanel">
+  <div class="notes-panel-header">
+    <span class="notes-panel-title">Notes <span class="notes-count" id="notesCount"></span></span>
+    <button class="notes-panel-close" onclick="toggleNotes()">&#215;</button>
+  </div>
+  <div class="notes-input-area">
+    <input type="text" id="noteTitle" placeholder="Challenge name...">
+    <textarea class="notes-textarea" id="noteBody" placeholder="Findings, flags, commands..."></textarea>
+    <button class="notes-add-btn" onclick="addNote()">Save note</button>
+  </div>
+  <div class="notes-list" id="notesList"></div>
+  <div class="card" style="margin:.75rem;">
+    <div class="card-title">Backup &amp; Restore</div>
+    <p style="font-size:12px;color:var(--text-dim);line-height:1.5;">Notes and Task Board data lives only in this browser. Export a backup before clearing browser data or switching machines.</p>
+    <div class="backup-row">
+      <button class="qt-btn" onclick="exportBackup()">Export JSON</button>
+      <button class="qt-btn qt-btn-ghost" onclick="document.getElementById('backupImportInput').click()">Import JSON</button>
+      <input type="file" id="backupImportInput" accept="application/json" style="display:none" onchange="importBackup(this.files[0])">
+    </div>
+    <div class="backup-status" id="backupStatus"></div>
+  </div>
+  <div style="display:flex;justify-content:flex-end;padding:.25rem .5rem;">
+    <button class="notes-clear-btn" onclick="clearNotes()">Clear all</button>
+  </div>
+</div>
+
+<!-- COMMAND EXPLAINER -->
+<div class="cmd-explain-panel" id="cmdExplainPanel">
+  <div class="cmd-explain-title">Command Explainer</div>
+  <input class="cmd-explain-input" id="cmdExplainInput" type="text" placeholder="e.g. nmap -sC -sV -p- target" autocomplete="off">
+  <div class="cmd-explain-actions">
+    <button class="qt-btn" onclick="runCmdExplain()">Explain</button>
+    <button class="qt-btn qt-btn-ghost" onclick="clearCmdExplain()">Clear</button>
+  </div>
+  <div class="cmd-explain-output" id="cmdExplainOutput"></div>
+</div>
+
+<!-- TASK BOARD MODAL -->
+<div class="board-add-modal" id="boardModal" style="display:none;">
+  <div class="board-modal-box">
+    <div class="board-modal-title">Add Challenge</div>
+    <div class="board-modal-field">
+      <label class="board-modal-label">Challenge name</label>
+      <input class="board-modal-input" id="bm-name" placeholder="e.g. Baby BOF">
+    </div>
+    <div class="board-modal-field">
+      <label class="board-modal-label">Category</label>
+      <select class="board-modal-select" id="bm-cat">
+        <option value="web">Web</option><option value="pwn">Pwn</option>
+        <option value="re">RE</option><option value="crypto">Crypto</option>
+        <option value="forensics">Forensics</option><option value="osint">OSINT</option>
+        <option value="misc">Misc</option>
+      </select>
+    </div>
+    <div class="board-modal-field">
+      <label class="board-modal-label">Assigned to</label>
+      <select class="board-modal-select" id="bm-assign">
+        <option value="">Unassigned</option>
+        <option value="Meiji">Meiji</option><option value="Kiyoww">Kiyoww</option>
+        <option value="Dreaith">Dreaith</option><option value="Tosho">Tosho</option>
+      </select>
+    </div>
+    <div class="board-modal-field">
+      <label class="board-modal-label">Notes</label>
+      <input class="board-modal-input" id="bm-notes" placeholder="Initial thoughts...">
+    </div>
+    <div class="board-modal-actions">
+      <button class="board-modal-cancel" onclick="closeBoardModal()">Cancel</button>
+      <button class="board-modal-save" onclick="saveBoardCard()">Add Challenge</button>
+    </div>
+  </div>
+</div>
+
+<button class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')">&#8801;</button>
+
+<div id="app">
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-brand">
+        <div class="sidebar-title">PwnstarSheet</div>
+        <button class="theme-toggle" onclick="toggleTheme()">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2m0 14v2M4.22 4.22l1.42 1.42m12.72 12.72 1.42 1.42M3 12h2m14 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42M12 7a5 5 0 1 0 0 10A5 5 0 0 0 12 7z"/></svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+      <div class="sidebar-sub">Neutron Team</div>
+    </div>
+    <div class="sidebar-search-wrap">
+      <input class="sidebar-search" id="globalSearch" type="text" placeholder="Search tools..." oninput="runSearch()" autocomplete="off">
+      <div class="search-drop" id="searchDrop"></div>
+    </div>
+    <div class="nav-scroll">
+      <button class="nav-item active" onclick="show('dashboard',this)">Dashboard</button>
+      <div class="nav-group-label">Categories</div>
+      <button class="nav-item" onclick="show('recon',this)">Recon and OSINT</button>
+      <button class="nav-item" onclick="show('web',this)">Web Exploitation</button>
+      <button class="nav-item" onclick="show('pwn',this)">Binary Exploitation</button>
+      <button class="nav-item" onclick="show('re',this)">Reverse Engineering</button>
+      <button class="nav-item" onclick="show('crypto',this)">Cryptography</button>
+      <button class="nav-item" onclick="show('forensics',this)">Forensics and Stego</button>
+      <button class="nav-item" onclick="show('passwords',this)">Password Cracking</button>
+      <button class="nav-item" onclick="show('wireless',this)">Wireless</button>
+      <button class="nav-item" onclick="show('frameworks',this)">Exploitation Frameworks</button>
+      <div class="nav-group-label">Deep Dives</div>
+      <button class="nav-item" onclick="show('linux',this)">Linux</button>
+      <button class="nav-item" onclick="show('windows',this)">Windows</button>
+      <button class="nav-item" onclick="show('rdp',this)">RDP / Remote Access</button>
+      <button class="nav-item" onclick="show('dataanalyst',this)">Data Analyst</button>
+      <div class="nav-group-label">Workbench</div>
+      <button class="nav-item" onclick="show('cheatindex',this)">Unified Cheat Index</button>
+      <button class="nav-item" onclick="show('decoder',this)">Multi-Decoder</button>
+      <button class="nav-item" onclick="show('quicktools',this)">Quick Tools</button>
+      <button class="nav-item" onclick="show('ascii',this)">ASCII Table</button>
+      <button class="nav-item" onclick="show('scriptref',this)">Script Reference</button>
+      <button class="nav-item" onclick="show('dorkbuilder',this)">Dork Builder</button>
+      <button class="nav-item" onclick="show('taskboard',this)">Task Board</button>
+      <div class="nav-group-label">Reference</div>
+      <button class="nav-item" onclick="show('emergencyref',this)">Emergency Reference</button>
+      <button class="nav-item" onclick="show('utilities',this)">Utilities and Misc</button>
+      <button class="nav-item" onclick="show('cheatsheets',this)">Cheatsheets</button>
+      <button class="nav-item" onclick="show('cmdref',this)">Command Reference</button>
+      <button class="nav-item" onclick="show('tips',this)">Quick Tips</button>
+    </div>
+    <div class="sidebar-footer-area">Notes panel (pencil) &middot; ? = command help &middot; offline-ready</div>
+  </nav>
+  <div class="main-wrapper">
+    <main class="main">
+
+<!-- QUICK TOOLS -->
+<section class="page" id="quicktools">
+  <div class="page-header"><div class="page-eyebrow">Workbench</div><h1 class="page-title">Quick Tools</h1><p class="page-desc">Hash identifier, cipher detector, reverse shell gen, base converter, flag hunter. All offline. Click any result to copy.</p></div>
+  <div class="qt-grid">
+    <div class="qt-card">
+      <div class="qt-card-title"><span class="qt-card-icon">HI</span> Hash Identifier</div>
+      <input class="qt-input" id="hashInput" placeholder="Paste hash here..." oninput="identifyHash()">
+      <div class="qt-result" id="hashResult">Waiting for hash...</div>
+    </div>
+    <div class="qt-card">
+      <div class="qt-card-title"><span class="qt-card-icon">CP</span> Cipher Pattern ID</div>
+      <input class="qt-input" id="cipherInput" placeholder="Paste suspicious text..." oninput="identifyCipher()">
+      <div class="qt-result" id="cipherResult">Waiting for input...</div>
+    </div>
+    <div class="qt-card">
+      <div class="qt-card-title"><span class="qt-card-icon">NB</span> Number Base Converter</div>
+      <div style="display:flex;gap:.4rem;margin-bottom:.4rem;">
+        <select class="qt-select" id="baseFrom" style="margin:0;">
+          <option value="10">Dec</option><option value="16">Hex</option>
+          <option value="2">Bin</option><option value="8">Oct</option>
+        </select>
+        <input class="qt-input" id="baseInput" placeholder="Enter value..." oninput="convertBase()" style="margin:0;flex:1;">
+      </div>
+      <div class="qt-result" id="baseResult" style="white-space:pre;font-size:11.5px;">Waiting...</div>
+    </div>
+    <div class="qt-card">
+      <div class="qt-card-title"><span class="qt-card-icon">FH</span> Flag Hunter</div>
+      <textarea class="qt-input" id="flagInput" style="min-height:70px;" placeholder="Paste any text or dump to hunt flags..." oninput="huntFlags()"></textarea>
+      <div class="qt-result" id="flagResult">Waiting for input...</div>
+    </div>
+    <div class="qt-card">
+      <div class="qt-card-title"><span class="qt-card-icon">RS</span> Reverse Shell Generator</div>
+      <div style="display:flex;gap:.4rem;margin-bottom:.4rem;flex-wrap:wrap;">
+        <input class="qt-input" id="rshellIp" placeholder="Your IP" style="margin:0;flex:1;min-width:100px;" oninput="genRevShell()">
+        <input class="qt-input" id="rshellPort" placeholder="Port" style="margin:0;width:70px;" oninput="genRevShell()">
+      </div>
+      <select class="qt-select" id="rshellType" onchange="genRevShell()">
+        <option value="bash">Bash</option><option value="python3">Python 3</option>
+        <option value="python2">Python 2</option><option value="nc">Netcat</option>
+        <option value="nc-e">Netcat -e</option><option value="php">PHP</option>
+        <option value="perl">Perl</option><option value="ruby">Ruby</option>
+        <option value="powershell">PowerShell</option>
+      </select>
+      <div class="qt-result" id="rshellResult" style="font-size:11px;cursor:pointer;" onclick="copyQtResult('rshellResult')">Fill IP and port above</div>
+      <button class="qt-btn" style="margin-top:.4rem;width:100%;" onclick="copyQtResult('rshellResult')">Copy Shell</button>
+    </div>
+    <div class="qt-card">
+      <div class="qt-card-title"><span class="qt-card-icon">RG</span> Regex Flag Grep</div>
+      <input class="qt-input" id="regexPattern" placeholder="Pattern e.g. flag\{.*?\}" style="margin-bottom:.3rem;">
+      <textarea class="qt-input" id="regexText" style="min-height:60px;" placeholder="Paste text to search..."></textarea>
+      <button class="qt-btn" onclick="runRegexGrep()" style="margin-top:.3rem;">Search</button>
+      <div class="qt-result" id="regexResult" style="margin-top:.4rem;">Waiting...</div>
+    </div>
+  </div>
+</section>
+
+<!-- TASK BOARD -->
+<section class="page" id="taskboard">
+  <div class="page-header"><div class="page-eyebrow">Workbench</div><h1 class="page-title">Team Task Board</h1><p class="page-desc">Track challenges per member. Click a card to advance its status. Flag it when solved.</p></div>
+  <div class="board-header">
+    <div style="font-size:13px;color:var(--text-dim);">Click card status button to cycle: Untouched &rarr; Working &rarr; Stuck &rarr; Solved</div>
+    <button class="board-add-btn" onclick="openBoardModal()">+ Add Challenge</button>
+  </div>
+  <div class="board-columns" id="boardColumns">
+    <div class="board-col" data-status="Untouched"><div class="board-col-header"><span class="board-col-title">Untouched</span><span class="board-col-count" id="count-Untouched">0</span></div><div class="board-cards" id="col-Untouched"></div></div>
+    <div class="board-col" data-status="Working"><div class="board-col-header"><span class="board-col-title">Working</span><span class="board-col-count" id="count-Working">0</span></div><div class="board-cards" id="col-Working"></div></div>
+    <div class="board-col" data-status="Stuck"><div class="board-col-header"><span class="board-col-title">Stuck</span><span class="board-col-count" id="count-Stuck">0</span></div><div class="board-cards" id="col-Stuck"></div></div>
+    <div class="board-col" data-status="Solved"><div class="board-col-header"><span class="board-col-title">Solved</span><span class="board-col-count" id="count-Solved">0</span></div><div class="board-cards" id="col-Solved"></div></div>
+  </div>
+</section>
+
+<!-- DECODER -->
+<section class="page visible" id="dashboard">
+  <div class="page-header">
+    <div class="page-eyebrow">Neutron Team PH</div>
+    <h1 class="page-title">Dashboard</h1>
+    <p class="page-desc">Your CTF command center. Quick stats, fast jumps to the tools you need, and your latest notes â€” all in one place.</p>
+  </div>
+
+  <div class="dash-grid" id="dashStats"></div>
+
+  <div class="dash-section-title">Quick Access</div>
+  <div class="dash-actions">
+    <button class="dash-action" onclick="goToPage('emergencyref')">
+      <span class="dash-action-icon">ER</span>
+      <div class="dash-action-title">Emergency Reference</div>
+      <div class="dash-action-desc">Ports, file signatures, encoding, and quick commands.</div>
+    </button>
+    <button class="dash-action" onclick="goToPage('cheatindex')">
+      <span class="dash-action-icon">UC</span>
+      <div class="dash-action-title">Unified Cheat Index</div>
+      <div class="dash-action-desc">Search every tool, reference, and command at once. <kbd>Ctrl+K</kbd></div>
+    </button>
+    <button class="dash-action" onclick="goToPage('decoder')">
+      <span class="dash-action-icon">MD</span>
+      <div class="dash-action-title">Multi-Decoder</div>
+      <div class="dash-action-desc">Base64, hex, ROT13, XOR brute force, and more.</div>
+    </button>
+    <button class="dash-action" onclick="goToPage('taskboard')">
+      <span class="dash-action-icon">TB</span>
+      <div class="dash-action-title">Task Board</div>
+      <div class="dash-action-desc">Track who's working on what across the team.</div>
+    </button>
+    <button class="dash-action" onclick="goToPage('scriptref')">
+      <span class="dash-action-icon">SR</span>
+      <div class="dash-action-title">Script Reference</div>
+      <div class="dash-action-desc">Copy-paste ready scripts: Python, Bash, PowerShell, JS.</div>
+    </button>
+  </div>
+
+  <div class="dash-section-title">Task Board Snapshot</div>
+  <div class="dash-board-mini" id="dashBoardMini"></div>
+
+  <div class="dash-section-title">Recent Notes</div>
+  <div class="dash-notes-preview" id="dashNotesPreview"></div>
+</section>
+
+<section class="page" id="decoder">
+  <div class="page-header"><div class="page-eyebrow">Workbench</div><h1 class="page-title">Multi-Decoder</h1><p class="page-desc">Tries Base64, Base32, Hex, Binary, ROT13, ROT47, Atbash, Morse, URL decode, reversed text, and brute-force Caesar. All offline.</p></div>
+  <textarea class="decoder-input" id="decoderInput" placeholder="Paste ciphertext or encoded string here..." oninput="runDecoder()"></textarea>
+  <div class="decoder-results" id="decoderResults"></div>
+  <div class="card" style="margin-top:1.25rem;">
+    <div class="card-title">XOR single-byte brute force</div>
+    <div class="callout" style="margin-bottom:10px;"><strong>Usage:</strong> Paste hex bytes (e.g. <code>1c0a0e1b</code>). Tries all 256 XOR keys.</div>
+    <textarea class="decoder-input" id="xorInput" style="min-height:60px;" placeholder="Enter hex bytes e.g. 1c0a0e1b4f1a4116" oninput="runXor()"></textarea>
+    <div class="xor-toggle-row">
+      <button class="xor-toggle-btn active" onclick="setXorMode('printable',this)">Printable only</button>
+      <button class="xor-toggle-btn" onclick="setXorMode('full256',this)">Full 256 brute force</button>
+    </div>
+    <div class="decoder-results" id="xorResults"></div>
+  </div>
+</section>
+
+<!-- ASCII -->
+<section class="page" id="ascii">
+  <div class="page-header"><div class="page-eyebrow">Workbench</div><h1 class="page-title">ASCII Table</h1><p class="page-desc">Dec, Hex, Binary, and character for all 128 ASCII values.</p></div>
+  <input type="text" class="ascii-search" id="asciiSearch" placeholder="Search by character, decimal (65), or hex (41 or 0x41)..." oninput="filterAscii()">
+  <div class="ascii-scroll"><table class="ascii-table"><thead><tr><th>Dec</th><th>Hex</th><th>Binary</th><th>Char</th><th>Description</th></tr></thead><tbody id="asciiBody"></tbody></table></div>
+</section>
+
+<!-- SCRIPT REFERENCE -->
+<section class="page" id="scriptref">
+  <div class="page-header"><div class="page-eyebrow">Workbench</div><h1 class="page-title">Script Reference</h1><p class="page-desc">Copy-paste ready automation scripts for CTF work â€” text cleanup, extraction, crypto solvers, and enumeration helpers. Not a generator: read, learn, copy, adapt.</p></div>
+  <div class="scriptref-filter-bar" id="scriptrefFilterBar">
+    <button class="filter-btn active" onclick="filterScriptRef('all',this)">All</button>
+    <button class="filter-btn" onclick="filterScriptRef('python',this)">Python</button>
+    <button class="filter-btn" onclick="filterScriptRef('bash',this)">Bash</button>
+    <button class="filter-btn" onclick="filterScriptRef('powershell',this)">PowerShell</button>
+    <button class="filter-btn" onclick="filterScriptRef('javascript',this)">JavaScript</button>
+  </div>
+  <div id="scriptRefList"></div>
+</section>
+
+
+
+<!-- DORK BUILDER -->
+<section class="page" id="dorkbuilder">
+  <div class="page-header"><div class="page-eyebrow">Workbench</div><h1 class="page-title">Dork Builder</h1><p class="page-desc">Build Google dork queries by combining operators.</p></div>
+  <div class="card">
+    <div class="card-title">Operators</div>
+    <div class="osint-tags" id="osintTags">
+      <button class="filter-btn osint-tag-btn" data-tag="site" onclick="toggleOsintTag('site')">site:</button>
+      <button class="filter-btn osint-tag-btn" data-tag="intitle" onclick="toggleOsintTag('intitle')">intitle:</button>
+      <button class="filter-btn osint-tag-btn" data-tag="inurl" onclick="toggleOsintTag('inurl')">inurl:</button>
+      <button class="filter-btn osint-tag-btn" data-tag="intext" onclick="toggleOsintTag('intext')">intext:</button>
+      <button class="filter-btn osint-tag-btn" data-tag="filetype" onclick="toggleOsintTag('filetype')">filetype:</button>
+      <button class="filter-btn osint-tag-btn" data-tag="cache" onclick="toggleOsintTag('cache')">cache:</button>
+      <button class="filter-btn osint-tag-btn" data-tag="related" onclick="toggleOsintTag('related')">related:</button>
+      <button class="filter-btn osint-tag-btn" data-tag="allinurl" onclick="toggleOsintTag('allinurl')">allinurl:</button>
+      <button class="filter-btn osint-tag-btn" data-tag="allintitle" onclick="toggleOsintTag('allintitle')">allintitle:</button>
+      <button class="filter-btn osint-tag-btn" data-tag="allintext" onclick="toggleOsintTag('allintext')">allintext:</button>
+    </div>
+  </div>
+  <div class="card" style="margin-top:1.25rem;"><div class="card-title">Active filters</div><div id="osintInputs"><div class="osint-empty">Click an operator above to add a filter.</div></div></div>
+  <div class="card" style="margin-top:1.25rem;">
+    <div class="card-title">Query</div>
+    <div class="osint-query" id="osintQuery"><span class="osint-query-placeholder">Add a filter to build your query...</span></div>
+    <div style="display:flex;gap:8px;margin-top:10px;">
+      <button class="helper-submit osint-copy-btn" onclick="copyOsintQuery()">Copy query</button>
+      <button class="helper-submit" onclick="clearOsintTags()" style="background:transparent;color:var(--red);border:1px solid var(--red);">Clear all</button>
+    </div>
+  </div>
+</section>
+
+<!-- RECON -->
+<section class="page" id="recon">
+  <div class="page-header"><div class="page-eyebrow">Categories</div><h1 class="page-title">Recon and OSINT</h1><p class="page-desc">Network recon, port scanning, directory discovery, DNS enumeration. Meiji's domain.</p></div>
+  <div class="tree-wrap"><div class="tree-controls"><button class="tree-toggle-btn" onclick="toggleTree('tree-recon',true)">Expand All</button><button class="tree-toggle-btn" onclick="toggleTree('tree-recon',false)">Collapse</button><span style="font-size:11px;color:var(--text-faint);margin-left:.5rem;">Red = must-use. Bold path = recommended first steps.</span></div><div id="tree-recon"></div></div>
+  <div class="tool-grid" id="toolgrid-recon"></div>
+  <hr class="section-divider">
+  <div class="grid-2">
+    <div class="card"><div class="card-title">Geo clues in photos</div>
+      <div class="row"><span class="row-label">Signs</span><span class="row-val normal">Language, script, road sign style</span></div>
+      <div class="row"><span class="row-label">Architecture</span><span class="row-val normal">Building style reveals country</span></div>
+      <div class="row"><span class="row-label">Vegetation</span><span class="row-val normal">Tropical, desert, temperate, snowy</span></div>
+      <div class="row"><span class="row-label">Sun angle</span><span class="row-val normal">Shadow direction hints at hemisphere</span></div>
+    </div>
+    <div class="card"><div class="card-title">Recon workflow</div>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-text">Port scan: <code>nmap -sC -sV -p- -T4 target</code></div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text">Dir brute: <code>gobuster dir -u http://target -w medium.txt -x php,html,txt</code></div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text">DNS: <code>dig ANY target.com</code> then zone transfer</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text">Subdomains: <code>amass enum -passive -d target.com</code></div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-text">Check WHOIS, robots.txt, /.git/, /.env, /backup/</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEB -->
+<section class="page" id="web">
+  <div class="page-header"><div class="page-eyebrow">Categories</div><h1 class="page-title">Web Exploitation</h1><p class="page-desc">Finding and abusing bugs in web applications. Kiyoww and Dreaith's domain.</p></div>
+  <div class="tree-wrap"><div class="tree-controls"><button class="tree-toggle-btn" onclick="toggleTree('tree-web',true)">Expand All</button><button class="tree-toggle-btn" onclick="toggleTree('tree-web',false)">Collapse</button></div><div id="tree-web"></div></div>
+  <div class="tool-grid" id="toolgrid-web"></div>
+  <hr class="section-divider">
+  <div class="grid-2">
+    <div class="card"><div class="card-title">First things to check</div>
+      <div class="row"><span class="row-label">View Source</span><span class="row-val normal">Ctrl+U, comments hide flags</span></div>
+      <div class="row"><span class="row-label">robots.txt</span><span class="row-val normal">May list hidden paths</span></div>
+      <div class="row"><span class="row-label">/.git/</span><span class="row-val normal">Exposed git leaks source code</span></div>
+      <div class="row"><span class="row-label">Cookies</span><span class="row-val normal">F12, Application, Cookies</span></div>
+    </div>
+    <div class="card"><div class="card-title">Quick payload starters</div>
+      <div class="row"><span class="row-label">SQLi</span><span class="row-val"><code>' OR '1'='1</code></span></div>
+      <div class="row"><span class="row-label">XSS</span><span class="row-val"><code>&lt;img src=x onerror=alert(1)&gt;</code></span></div>
+      <div class="row"><span class="row-label">SSTI Jinja2</span><span class="row-val"><code>{{7*7}}</code></span></div>
+      <div class="row"><span class="row-label">LFI</span><span class="row-val"><code>../../../../etc/passwd</code></span></div>
+      <div class="row"><span class="row-label">SSRF bypass</span><span class="row-val"><code>http://0x7f000001</code></span></div>
+      <div class="row"><span class="row-label">JWT alg:none</span><span class="row-val normal">Remove sig, set alg to none</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PWN -->
+<section class="page" id="pwn">
+  <div class="page-header"><div class="page-eyebrow">Categories</div><h1 class="page-title">Binary Exploitation</h1><p class="page-desc">Memory-safety bugs. Tosho's domain. BOF, ROP, format strings, heap.</p></div>
+  <div class="tree-wrap"><div class="tree-controls"><button class="tree-toggle-btn" onclick="toggleTree('tree-pwn',true)">Expand All</button><button class="tree-toggle-btn" onclick="toggleTree('tree-pwn',false)">Collapse</button></div><div id="tree-pwn"></div></div>
+  <div class="tool-grid" id="toolgrid-pwn"></div>
+  <hr class="section-divider">
+  <div class="grid-2">
+    <div class="card"><div class="card-title">Checksec output meaning</div>
+      <div class="row"><span class="row-label">No NX</span><span class="row-val normal">Stack executable, shellcode works</span></div>
+      <div class="row"><span class="row-label">No PIE</span><span class="row-val normal">Addresses fixed, easier ROP</span></div>
+      <div class="row"><span class="row-label">No canary</span><span class="row-val normal">Stack smashing without detection</span></div>
+      <div class="row"><span class="row-label">Partial RELRO</span><span class="row-val normal">GOT writable, overwrite possible</span></div>
+    </div>
+    <div class="card"><div class="card-title">pwndbg cheat commands</div>
+      <div class="row"><span class="row-label">cyclic 100</span><span class="row-val normal">Generate De Bruijn pattern</span></div>
+      <div class="row"><span class="row-label">cyclic -l $rsp</span><span class="row-val normal">Find offset from crash</span></div>
+      <div class="row"><span class="row-label">telescope</span><span class="row-val normal">Smart memory dump</span></div>
+      <div class="row"><span class="row-label">got</span><span class="row-val normal">Show GOT table</span></div>
+      <div class="row"><span class="row-label">vmmap</span><span class="row-val normal">Show memory layout</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- RE -->
+<section class="page" id="re">
+  <div class="page-header"><div class="page-eyebrow">Categories</div><h1 class="page-title">Reverse Engineering</h1><p class="page-desc">Understanding compiled programs without source. Tosho and Meiji's domain.</p></div>
+  <div class="tree-wrap"><div class="tree-controls"><button class="tree-toggle-btn" onclick="toggleTree('tree-re',true)">Expand All</button><button class="tree-toggle-btn" onclick="toggleTree('tree-re',false)">Collapse</button></div><div id="tree-re"></div></div>
+  <div class="tool-grid" id="toolgrid-re"></div>
+  <hr class="section-divider">
+  <div class="grid-2">
+    <div class="card"><div class="card-title">x86-64 calling convention</div>
+      <div class="row"><span class="row-label">arg 1</span><span class="row-val"><code>RDI</code></span></div>
+      <div class="row"><span class="row-label">arg 2</span><span class="row-val"><code>RSI</code></span></div>
+      <div class="row"><span class="row-label">arg 3</span><span class="row-val"><code>RDX</code></span></div>
+      <div class="row"><span class="row-label">arg 4</span><span class="row-val"><code>RCX</code></span></div>
+      <div class="row"><span class="row-label">return</span><span class="row-val"><code>RAX</code></span></div>
+    </div>
+    <div class="card"><div class="card-title">Ghidra shortcuts</div>
+      <div class="row"><span class="row-label">F5</span><span class="row-val normal">Decompile function</span></div>
+      <div class="row"><span class="row-label">N</span><span class="row-val normal">Rename symbol</span></div>
+      <div class="row"><span class="row-label">X</span><span class="row-val normal">Cross references</span></div>
+      <div class="row"><span class="row-label">G</span><span class="row-val normal">Go to address</span></div>
+      <div class="row"><span class="row-label">Ctrl+F</span><span class="row-val normal">Search strings</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CRYPTO -->
+<section class="page" id="crypto">
+  <div class="page-header"><div class="page-eyebrow">Categories</div><h1 class="page-title">Cryptography</h1><p class="page-desc">Encoding, classical ciphers, modern crypto, RSA attacks. Meiji's domain.</p></div>
+  <div class="tree-wrap"><div class="tree-controls"><button class="tree-toggle-btn" onclick="toggleTree('tree-crypto',true)">Expand All</button><button class="tree-toggle-btn" onclick="toggleTree('tree-crypto',false)">Collapse</button></div><div id="tree-crypto"></div></div>
+  <div class="tool-grid" id="toolgrid-crypto"></div>
+  <hr class="section-divider">
+  <div class="grid-2">
+    <div class="card"><div class="card-title">Recognize by pattern</div>
+      <div class="row"><span class="row-label">Base64</span><span class="row-val">Ends = or ==, a-z A-Z 0-9 +/</span></div>
+      <div class="row"><span class="row-label">Base32</span><span class="row-val">All caps, A-Z and 2-7 only</span></div>
+      <div class="row"><span class="row-label">Hex</span><span class="row-val">0-9 a-f only, even length</span></div>
+      <div class="row"><span class="row-label">Morse</span><span class="row-val">Dots and dashes only</span></div>
+      <div class="row"><span class="row-label">JWT</span><span class="row-val">3 dots, starts eyJ</span></div>
+    </div>
+    <div class="card"><div class="card-title">RSA attacks</div>
+      <div class="row"><span class="row-label">Small N</span><span class="row-val normal">Factor directly via FactorDB</span></div>
+      <div class="row"><span class="row-label">Common factor</span><span class="row-val normal">GCD(N1,N2) gives shared prime</span></div>
+      <div class="row"><span class="row-label">Small e</span><span class="row-val normal">e=3 small msg, cube root attack</span></div>
+      <div class="row"><span class="row-label">Wiener</span><span class="row-val normal">Small d, continued fractions</span></div>
+      <div class="row"><span class="row-label">Fermat</span><span class="row-val normal">p, q close together</span></div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:1rem;">
+    <div class="card-title">Morse code alphabet</div>
+    <div class="morse-grid" id="morseGrid"></div>
+    <div style="font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;margin:10px 0 6px;">Numbers</div>
+    <div class="morse-grid" id="morseNumbers"></div>
+  </div>
+</section>
+
+<!-- FORENSICS -->
+<section class="page" id="forensics">
+  <div class="page-header"><div class="page-eyebrow">Categories</div><h1 class="page-title">Forensics and Steganography</h1><p class="page-desc">File analysis, memory dumps, disk images, stego. Dreaith's domain.</p></div>
+  <div class="tree-wrap"><div class="tree-controls"><button class="tree-toggle-btn" onclick="toggleTree('tree-forensics',true)">Expand All</button><button class="tree-toggle-btn" onclick="toggleTree('tree-forensics',false)">Collapse</button></div><div id="tree-forensics"></div></div>
+  <div class="tool-grid" id="toolgrid-forensics"></div>
+  <div class="section-h2" style="margin-top:1.25rem;">Network analysis tools</div>
+  <div class="tool-grid" id="toolgrid-network"></div>
+  <hr class="section-divider">
+  <div class="grid-2">
+    <div class="card"><div class="card-title">Image stego techniques</div>
+      <div class="row"><span class="row-label">LSB</span><span class="row-val normal">Data in least significant pixel bits</span></div>
+      <div class="row"><span class="row-label">Metadata</span><span class="row-val normal">Flag in EXIF, XMP, comments</span></div>
+      <div class="row"><span class="row-label">EOF data</span><span class="row-val normal">Extra data after image ends</span></div>
+      <div class="row"><span class="row-label">File-in-file</span><span class="row-val normal">ZIP/RAR hidden inside JPG</span></div>
+    </div>
+    <div class="card"><div class="card-title">Forensics workflow</div>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-text"><code>file target</code> and <code>strings target | grep -i flag</code></div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text"><code>binwalk -e target</code> to extract embedded files</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text"><code>exiftool target</code>, <code>zsteg -a</code> on PNG</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text">PCAP: Wireshark, follow TCP streams</div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-text">Memory: Volatility 3 <code>windows.pslist</code>, <code>dumpfiles</code></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:1rem;">
+    <div class="card-title">File signature reference</div>
+    <div class="callout" style="margin-bottom:10px;">Files lie about extensions. Check with <code>xxd file | head</code></div>
+    <input type="text" class="ascii-search" id="sigSearch" placeholder="Search by extension (PNG) or hex (89 50)..." oninput="filterSigs()">
+    <div class="sig-scroll">
+      <table class="sig-table"><thead><tr><th>Hex signature</th><th>Extension</th><th>Description</th></tr></thead>
+      <tbody id="sigBody">
+        <tr><td class="sig-hex">FF D8 FF E0</td><td class="sig-ext">JPG</td><td>JFIF format image</td></tr>
+        <tr><td class="sig-hex">FF D8 FF E1</td><td class="sig-ext">JPG</td><td>Exif format image</td></tr>
+        <tr><td class="sig-hex">89 50 4E 47 0D 0A 1A 0A</td><td class="sig-ext">PNG</td><td>Portable Network Graphics</td></tr>
+        <tr><td class="sig-hex">47 49 46 38 37 61</td><td class="sig-ext">GIF</td><td>GIF87a image</td></tr>
+        <tr><td class="sig-hex">47 49 46 38 39 61</td><td class="sig-ext">GIF</td><td>GIF89a image</td></tr>
+        <tr><td class="sig-hex">42 4D</td><td class="sig-ext">BMP</td><td>Bitmap image</td></tr>
+        <tr><td class="sig-hex">50 4B 03 04</td><td class="sig-ext">ZIP</td><td>ZIP archive</td></tr>
+        <tr><td class="sig-hex">52 61 72 21 1A 07 00</td><td class="sig-ext">RAR</td><td>RAR archive v4</td></tr>
+        <tr><td class="sig-hex">7F 45 4C 46</td><td class="sig-ext">ELF</td><td>Linux executable</td></tr>
+        <tr><td class="sig-hex">4D 5A</td><td class="sig-ext">EXE</td><td>Windows executable</td></tr>
+        <tr><td class="sig-hex">25 50 44 46</td><td class="sig-ext">PDF</td><td>Adobe PDF</td></tr>
+        <tr><td class="sig-hex">1F 8B 08</td><td class="sig-ext">GZ</td><td>GZIP compressed</td></tr>
+        <tr><td class="sig-hex">42 5A 68</td><td class="sig-ext">BZ2</td><td>BZip2 compressed</td></tr>
+        <tr><td class="sig-hex">D0 CF 11 E0 A1 B1 1A E1</td><td class="sig-ext">DOC/XLS</td><td>MS Office legacy</td></tr>
+        <tr><td class="sig-hex">52 49 46 46</td><td class="sig-ext">WAV/AVI</td><td>RIFF audio/video</td></tr>
+        <tr><td class="sig-hex">49 44 33</td><td class="sig-ext">MP3</td><td>MP3 with ID3 tag</td></tr>
+        <tr><td class="sig-hex">0A 0D 0D 0A</td><td class="sig-ext">PCAPNG</td><td>Wireshark capture</td></tr>
+        <tr><td class="sig-hex">D4 C3 B2 A1</td><td class="sig-ext">PCAP</td><td>Tcpdump capture</td></tr>
+        <tr><td class="sig-hex">53 51 4C 69 74 65</td><td class="sig-ext">SQLite</td><td>SQLite database</td></tr>
+        <tr><td class="sig-hex">CA FE BA BE</td><td class="sig-ext">CLASS</td><td>Java class file</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+</section>
+
+<!-- PASSWORDS -->
+<section class="page" id="passwords">
+  <div class="page-header"><div class="page-eyebrow">Categories</div><h1 class="page-title">Password Cracking</h1><p class="page-desc">Hash cracking, wordlists, and online service brute-forcing.</p></div>
+  <div class="tool-grid" id="toolgrid-passwords"></div>
+</section>
+
+<!-- WIRELESS -->
+<section class="page" id="wireless">
+  <div class="page-header"><div class="page-eyebrow">Categories</div><h1 class="page-title">Wireless</h1><p class="page-desc">Wi-Fi auditing, WPA2 capture, PMKID attacks.</p></div>
+  <div class="tool-grid" id="toolgrid-wireless"></div>
+</section>
+
+<!-- FRAMEWORKS -->
+<section class="page" id="frameworks">
+  <div class="page-header"><div class="page-eyebrow">Categories</div><h1 class="page-title">Exploitation Frameworks</h1><p class="page-desc">Metasploit, impacket, BloodHound, post-exploitation suites.</p></div>
+  <div class="tool-grid" id="toolgrid-frameworks"></div>
+</section>
+
+<!-- UTILITIES -->
+<section class="page" id="utilities">
+  <div class="page-header"><div class="page-eyebrow">Reference</div><h1 class="page-title">Utilities and Misc</h1><p class="page-desc">General tools, platforms, and resources every CTF player should know.</p></div>
+  <div class="tool-grid" id="toolgrid-utilities"></div>
+  <div class="section-h2">Misc resources</div>
+  <div class="tool-grid" id="toolgrid-misc"></div>
+</section>
+
+<!-- CHEATSHEETS -->
+<section class="page" id="cheatsheets">
+  <div class="page-header"><div class="page-eyebrow">Reference</div><h1 class="page-title">Cheatsheets</h1><p class="page-desc">Quick-access reference for common attack patterns and techniques.</p></div>
+  <div class="grid-2">
+    <div class="card"><div class="card-title">Common flag formats</div>
+      <div class="row"><span class="row-label">Generic</span><span class="row-val"><code>flag{...}</code></span></div>
+      <div class="row"><span class="row-label">picoCTF</span><span class="row-val"><code>picoCTF{...}</code></span></div>
+      <div class="row"><span class="row-label">HTB</span><span class="row-val"><code>HTB{...}</code></span></div>
+      <div class="row"><span class="row-label">THM</span><span class="row-val"><code>THM{...}</code></span></div>
+    </div>
+    <div class="card"><div class="card-title">SSTI payloads by engine</div>
+      <div class="row"><span class="row-label">Jinja2</span><span class="row-val"><code>{{7*7}}</code> = 49</span></div>
+      <div class="row"><span class="row-label">Twig</span><span class="row-val"><code>{{7*'7'}}</code> = 7777777</span></div>
+      <div class="row"><span class="row-label">Freemarker</span><span class="row-val"><code>${7*7}</code></span></div>
+      <div class="row"><span class="row-label">Mako</span><span class="row-val"><code>${7*7}</code></span></div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:1rem;"><div class="card-title">JWT attacks</div>
+    <div class="row"><span class="row-label">alg:none</span><span class="row-val normal">Remove signature, set alg to none</span></div>
+    <div class="row"><span class="row-label">RS256 to HS256</span><span class="row-val normal">Use RSA public key as HMAC secret</span></div>
+    <div class="row"><span class="row-label">Weak secret</span><span class="row-val"><code>hashcat -a 0 -m 16500 jwt.txt rockyou.txt</code></span></div>
+    <div class="row"><span class="row-label">kid injection</span><span class="row-val normal">kid: "../../dev/null" with empty HMAC</span></div>
+  </div>
+  <div class="card" style="margin-top:1rem;"><div class="card-title">SSRF bypass techniques</div>
+    <div class="row"><span class="row-label">Decimal IP</span><span class="row-val"><code>http://2130706433</code></span></div>
+    <div class="row"><span class="row-label">Hex IP</span><span class="row-val"><code>http://0x7f000001</code></span></div>
+    <div class="row"><span class="row-label">Octal IP</span><span class="row-val"><code>http://0177.0.0.1</code></span></div>
+    <div class="row"><span class="row-label">IPv6</span><span class="row-val"><code>http://[::1]</code></span></div>
+  </div>
+  <div class="card" style="margin-top:1rem;"><div class="card-title">ROP chain building steps</div>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-text">Run <code>checksec</code>, confirm NX enabled</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">Find gadgets: <code>ROPgadget --binary ./vuln | grep "pop rdi"</code></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">Find <code>/bin/sh</code>: <code>strings -t x ./libc | grep /bin/sh</code></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text">Build chain: padding + pop_rdi + binsh_addr + system_addr</div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-text">Add <code>ret</code> gadget before system for 16-byte stack alignment</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CMD REF -->
+<section class="page" id="cmdref">
+  <div class="page-header"><div class="page-eyebrow">Reference</div><h1 class="page-title">Command Reference</h1><p class="page-desc">Click any command to copy it instantly.</p></div>
+  <div class="cmd-section"><div class="cmd-section-title">Nmap</div>
+    <div class="cmd-block"><div class="cmd-block-header">Common scan types</div>
+      <table class="cmd-table">
+        <tr><td onclick="copyCmd(this)">nmap -sC -sV -p- -T4 target</td><td>Full scan with scripts and version detection</td></tr>
+        <tr><td onclick="copyCmd(this)">nmap -sU --top-ports 100 target</td><td>UDP top 100 ports</td></tr>
+        <tr><td onclick="copyCmd(this)">nmap -sV --script vuln target</td><td>Vulnerability scan</td></tr>
+        <tr><td onclick="copyCmd(this)">nmap -sn 192.168.1.0/24</td><td>Ping sweep host discovery</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="cmd-section"><div class="cmd-section-title">pwndbg / GDB</div>
+    <div class="cmd-block"><div class="cmd-block-header">Essential commands</div>
+      <table class="cmd-table">
+        <tr><td onclick="copyCmd(this)">cyclic 200</td><td>Generate De Bruijn pattern</td></tr>
+        <tr><td onclick="copyCmd(this)">cyclic -l 0x6161616f</td><td>Find offset from crash value</td></tr>
+        <tr><td onclick="copyCmd(this)">telescope $rsp 20</td><td>Smart memory dump at stack pointer</td></tr>
+        <tr><td onclick="copyCmd(this)">got</td><td>Show GOT table with resolved addresses</td></tr>
+        <tr><td onclick="copyCmd(this)">vmmap</td><td>Show memory layout with permissions</td></tr>
+        <tr><td onclick="copyCmd(this)">heap bins</td><td>Show tcache and fastbin contents</td></tr>
+        <tr><td onclick="copyCmd(this)">b *0x401234</td><td>Set breakpoint at address</td></tr>
+        <tr><td onclick="copyCmd(this)">x/20gx $rsp</td><td>Examine 20 quadwords at RSP</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="cmd-section"><div class="cmd-section-title">Volatility 3</div>
+    <div class="cmd-block"><div class="cmd-block-header">Memory forensics</div>
+      <table class="cmd-table">
+        <tr><td onclick="copyCmd(this)">python3 vol.py -f mem.raw windows.info</td><td>Identify Windows profile</td></tr>
+        <tr><td onclick="copyCmd(this)">python3 vol.py -f mem.raw windows.pslist</td><td>List running processes</td></tr>
+        <tr><td onclick="copyCmd(this)">python3 vol.py -f mem.raw windows.cmdline</td><td>Show process command lines</td></tr>
+        <tr><td onclick="copyCmd(this)">python3 vol.py -f mem.raw windows.netscan</td><td>Network connections</td></tr>
+        <tr><td onclick="copyCmd(this)">python3 vol.py -f mem.raw windows.hashdump</td><td>Extract NTLM hashes</td></tr>
+        <tr><td onclick="copyCmd(this)">python3 vol.py -f mem.raw windows.malfind</td><td>Find injected code</td></tr>
+        <tr><td onclick="copyCmd(this)">python3 vol.py -f mem.raw linux.bash</td><td>Linux bash history from memory</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="cmd-section"><div class="cmd-section-title">Hashcat</div>
+    <div class="cmd-block"><div class="cmd-block-header">Common modes</div>
+      <table class="cmd-table">
+        <tr><td onclick="copyCmd(this)">hashcat -m 0 hash.txt rockyou.txt</td><td>MD5 dictionary attack</td></tr>
+        <tr><td onclick="copyCmd(this)">hashcat -m 1000 hash.txt rockyou.txt</td><td>NTLM cracking</td></tr>
+        <tr><td onclick="copyCmd(this)">hashcat -m 1800 hash.txt rockyou.txt</td><td>sha512crypt cracking</td></tr>
+        <tr><td onclick="copyCmd(this)">hashcat -m 3200 hash.txt rockyou.txt</td><td>bcrypt cracking</td></tr>
+        <tr><td onclick="copyCmd(this)">hashcat -m 16500 jwt.txt rockyou.txt</td><td>Crack JWT HS256 secret</td></tr>
+        <tr><td onclick="copyCmd(this)">hashcat -m 22000 wpa.hc22000 rockyou.txt</td><td>WPA2 PMKID crack</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="cmd-section"><div class="cmd-section-title">Web Exploitation</div>
+    <div class="cmd-block"><div class="cmd-block-header">Directory fuzzing and web attacks</div>
+      <table class="cmd-table">
+        <tr><td onclick="copyCmd(this)">gobuster dir -u http://target -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt -x php,html,txt,bak</td><td>Directory brute force</td></tr>
+        <tr><td onclick="copyCmd(this)">ffuf -u http://target/FUZZ -w wordlist.txt -mc 200,301,302</td><td>Fast fuzzing</td></tr>
+        <tr><td onclick="copyCmd(this)">ffuf -u "http://target/?FUZZ=1" -w params.txt -fs 1234</td><td>Parameter fuzzing</td></tr>
+        <tr><td onclick="copyCmd(this)">sqlmap -u "http://target/?id=1" --dbs</td><td>Enumerate databases</td></tr>
+        <tr><td onclick="copyCmd(this)">sqlmap -r request.txt --level=5 --risk=3</td><td>Thorough test from Burp request</td></tr>
+        <tr><td onclick="copyCmd(this)">tplmap -u 'http://target/?name=*'</td><td>SSTI detection</td></tr>
+        <tr><td onclick="copyCmd(this)">git-dumper http://target/.git ./output</td><td>Dump exposed .git directory</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="cmd-section"><div class="cmd-section-title">Steganography</div>
+    <div class="cmd-block"><div class="cmd-block-header">Image and audio analysis</div>
+      <table class="cmd-table">
+        <tr><td onclick="copyCmd(this)">exiftool image.jpg</td><td>Read all metadata</td></tr>
+        <tr><td onclick="copyCmd(this)">binwalk -e image.jpg</td><td>Extract embedded files</td></tr>
+        <tr><td onclick="copyCmd(this)">zsteg -a image.png</td><td>Check all LSB configurations</td></tr>
+        <tr><td onclick="copyCmd(this)">steghide extract -sf image.jpg</td><td>Extract hidden data</td></tr>
+        <tr><td onclick="copyCmd(this)">stegseek image.jpg rockyou.txt</td><td>Crack steghide password</td></tr>
+        <tr><td onclick="copyCmd(this)">xxd image.jpg | tail -20</td><td>Check bytes at end of file</td></tr>
+        <tr><td onclick="copyCmd(this)">ffmpeg -i audio.wav -lavfi showspectrumpic=s=1024x512 spec.png</td><td>Generate spectrogram</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="cmd-section"><div class="cmd-section-title">Python One-Liners</div>
+    <div class="cmd-block"><div class="cmd-block-header">Quick crypto and binary</div>
+      <table class="cmd-table">
+        <tr><td onclick="copyCmd(this)">python3 -c "import base64; print(base64.b64decode('SGVsbG8=').decode())"</td><td>Decode Base64</td></tr>
+        <tr><td onclick="copyCmd(this)">python3 -c "print(bytes.fromhex('68656c6c6f').decode())"</td><td>Hex to string</td></tr>
+        <tr><td onclick="copyCmd(this)">python3 -c "print(''.join(chr(ord(c)^0x41) for c in 'text'))"</td><td>XOR string with key</td></tr>
+        <tr><td onclick="copyCmd(this)">python3 -c "import hashlib; print(hashlib.md5(b'text').hexdigest())"</td><td>MD5 hash</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="cmd-section"><div class="cmd-section-title">John the Ripper</div>
+    <div class="cmd-block"><div class="cmd-block-header">Common usage</div>
+      <table class="cmd-table">
+        <tr><td onclick="copyCmd(this)">john hash.txt --wordlist=rockyou.txt</td><td>Basic dictionary attack</td></tr>
+        <tr><td onclick="copyCmd(this)">john hash.txt --rules --wordlist=rockyou.txt</td><td>With mangling rules</td></tr>
+        <tr><td onclick="copyCmd(this)">john --show hash.txt</td><td>Show cracked passwords</td></tr>
+        <tr><td onclick="copyCmd(this)">zip2john archive.zip &gt; zip.hash</td><td>Convert ZIP for cracking</td></tr>
+        <tr><td onclick="copyCmd(this)">ssh2john id_rsa &gt; ssh.hash</td><td>Convert SSH key</td></tr>
+        <tr><td onclick="copyCmd(this)">keepass2john db.kdbx &gt; keepass.hash</td><td>Convert KeePass database</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section class="page" id="cheatindex">
+  <div class="page-header">
+    <div class="page-eyebrow">Foundation</div>
+    <h1 class="page-title">Unified Cheat Index</h1>
+    <p class="page-desc">Search across every tool, reference, and command in the handbook from one place. Press <code>Ctrl+K</code> anytime to jump here.</p>
+  </div>
+  <input type="text" class="cheat-index-search" id="cheatIndexSearch" placeholder="Search tools, ports, commands, situations..." oninput="runCheatIndexSearch()" autocomplete="off">
+  <div class="cheat-index-hint">Indexed: <span id="ciIndexCount">0</span> entries.</div>
+  <div class="ci-count-badge" id="ciResultCount"></div>
+  <div class="cheat-index-results" id="cheatIndexResults">
+    <div class="ci-empty-state">Type to search, or browse by category using the sidebar.</div>
+  </div>
+</section>
+
+<section class="page" id="emergencyref">
+  <div class="page-header">
+    <div class="page-eyebrow">Reference</div>
+    <h1 class="page-title">Emergency Reference</h1>
+    <p class="page-desc">Port meanings, file signatures, encoding identification, and quick commands.</p>
+  </div>
+  <div class="eref-tabs">
+    <button class="eref-tab active" data-tab="ports" onclick="switchErefTab('ports',this)">Network / Ports</button>
+    <button class="eref-tab" data-tab="files" onclick="switchErefTab('files',this)">File Signatures</button>
+    <button class="eref-tab" data-tab="encoding" onclick="switchErefTab('encoding',this)">Encoding</button>
+    <button class="eref-tab" data-tab="commands" onclick="switchErefTab('commands',this)">Commands</button>
+  </div>
+  <div class="eref-panel active" id="eref-ports">
+    <input type="text" class="port-search" id="portSearch" placeholder="Search by port number, service, or keyword..." oninput="renderPortGrid()">
+    <div class="port-grid" id="portGrid"></div>
+  </div>
+  <div class="eref-panel" id="eref-files">
+    <p class="eref-note">Magic bytes reveal true file type regardless of extension.</p>
+    <input type="text" class="ascii-search" id="fileSigSearch" placeholder="Search by extension or hex..." oninput="renderFileSigTable()">
+    <div class="ascii-scroll">
+      <table class="sig-table">
+        <thead><tr><th>Hex signature</th><th>Ext</th><th>MIME type</th><th>Notes</th></tr></thead>
+        <tbody id="fileSigBody"></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="eref-panel" id="eref-encoding">
+    <p class="eref-note">How to recognize and decode common encodings.</p>
+    <div class="tool-grid" id="encodingGrid"></div>
+  </div>
+  <div class="eref-panel" id="eref-commands">
+    <p class="eref-note">Click any command to copy.</p>
+    <div class="cmdref-cols">
+      <div><div class="cmdref-group-title" style="font-size:13px;color:var(--accent);border-bottom:2px solid var(--accent);">Linux</div><div id="cmdrefLinux"></div></div>
+      <div><div class="cmdref-group-title" style="font-size:13px;color:var(--accent);border-bottom:2px solid var(--accent);">Windows</div><div id="cmdrefWindows"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LINUX -->
+<section class="page" id="linux">
+  <div class="page-header"><div class="page-eyebrow">Deep Dive</div><h1 class="page-title">Linux</h1><p class="page-desc">Filesystem, permissions, processes, networking, and privilege escalation reference for Linux boxes.</p></div>
+  <div class="grid-2">
+    <div class="card"><div class="card-title">Filesystem & permissions</div>
+      <div class="row"><span class="row-label">ls -la</span><span class="row-val normal">List with hidden files and permissions</span></div>
+      <div class="row"><span class="row-label">chmod 755 file</span><span class="row-val normal">rwxr-xr-x â€” owner all, others read+execute</span></div>
+      <div class="row"><span class="row-label">chown user:group</span><span class="row-val normal">Change file ownership</span></div>
+      <div class="row"><span class="row-label">find / -perm -4000</span><span class="row-val normal">Find all SUID binaries</span></div>
+      <div class="row"><span class="row-label">stat file</span><span class="row-val normal">Full metadata incl. timestamps</span></div>
+    </div>
+    <div class="card"><div class="card-title">Processes & services</div>
+      <div class="row"><span class="row-label">ps aux</span><span class="row-val normal">All running processes</span></div>
+      <div class="row"><span class="row-label">top / htop</span><span class="row-val normal">Live process monitor</span></div>
+      <div class="row"><span class="row-label">kill -9 PID</span><span class="row-val normal">Force kill a process</span></div>
+      <div class="row"><span class="row-label">systemctl list-units</span><span class="row-val normal">List active services (systemd)</span></div>
+      <div class="row"><span class="row-label">crontab -l</span><span class="row-val normal">List current user's cron jobs</span></div>
+    </div>
+  </div>
+  <div class="grid-2" style="margin-top:1rem;">
+    <div class="card"><div class="card-title">Networking</div>
+      <div class="row"><span class="row-label">ip a</span><span class="row-val normal">Interfaces and IP addresses</span></div>
+      <div class="row"><span class="row-label">ss -tulnp</span><span class="row-val normal">Listening ports + owning process</span></div>
+      <div class="row"><span class="row-label">ip r</span><span class="row-val normal">Routing table</span></div>
+      <div class="row"><span class="row-label">curl -s ifconfig.me</span><span class="row-val normal">Check external IP</span></div>
+    </div>
+    <div class="card"><div class="card-title">Privilege escalation checklist</div>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-text"><code>sudo -l</code> â€” what can you run as root?</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text"><code>find / -perm -4000 2>/dev/null</code> â€” SUID binaries, check GTFOBins</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text"><code>getcap -r / 2>/dev/null</code> â€” Linux capabilities</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text">Check cron jobs and writable scripts they call</div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-text">Run LinPEAS for anything missed</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WINDOWS -->
+<section class="page" id="windows">
+  <div class="page-header"><div class="page-eyebrow">Deep Dive</div><h1 class="page-title">Windows</h1><p class="page-desc">CMD, PowerShell, registry, services, and event log reference for Windows boxes.</p></div>
+  <div class="grid-2">
+    <div class="card"><div class="card-title">CMD basics</div>
+      <div class="row"><span class="row-label">whoami /priv</span><span class="row-val normal">Current privileges</span></div>
+      <div class="row"><span class="row-label">systeminfo</span><span class="row-val normal">OS/patch level</span></div>
+      <div class="row"><span class="row-label">net user</span><span class="row-val normal">List local users</span></div>
+      <div class="row"><span class="row-label">tasklist /svc</span><span class="row-val normal">Processes with owning service</span></div>
+      <div class="row"><span class="row-label">dir /s /b *.txt</span><span class="row-val normal">Recursive file search</span></div>
+    </div>
+    <div class="card"><div class="card-title">PowerShell essentials</div>
+      <div class="row"><span class="row-label">Get-Process</span><span class="row-val normal">Running processes</span></div>
+      <div class="row"><span class="row-label">Get-LocalUser</span><span class="row-val normal">Local user accounts</span></div>
+      <div class="row"><span class="row-label">Get-NetTCPConnection</span><span class="row-val normal">Active connections</span></div>
+      <div class="row"><span class="row-label">Get-ChildItem -Recurse</span><span class="row-val normal">Recursive file listing</span></div>
+      <div class="row"><span class="row-label">Invoke-WebRequest</span><span class="row-val normal">PowerShell's curl equivalent</span></div>
+    </div>
+  </div>
+  <div class="grid-2" style="margin-top:1rem;">
+    <div class="card"><div class="card-title">Registry & services</div>
+      <div class="row"><span class="row-label">reg query HKLM\...\Run</span><span class="row-val normal">Startup/persistence entries</span></div>
+      <div class="row"><span class="row-label">sc query</span><span class="row-val normal">List services</span></div>
+      <div class="row"><span class="row-label">wmic service list brief</span><span class="row-val normal">Services with startup mode</span></div>
+    </div>
+    <div class="card"><div class="card-title">Privilege escalation checklist</div>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-text"><code>whoami /priv</code> â€” look for SeImpersonate, SeDebug</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text"><code>systeminfo</code> â€” match patch level to known privesc CVEs</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text">Check unquoted service paths and writable service binaries</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text">Check scheduled tasks running as SYSTEM</div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-text">Run WinPEAS / PowerUp for anything missed</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RDP -->
+<section class="page" id="rdp">
+  <div class="page-header"><div class="page-eyebrow">Deep Dive</div><h1 class="page-title">RDP / Remote Access</h1><p class="page-desc">Connection steps, troubleshooting, enumeration, and security checks for RDP.</p></div>
+  <div class="grid-2">
+    <div class="card"><div class="card-title">Connection steps</div>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-text">Confirm port open: <code>nmap -sV -p3389 &lt;target&gt;</code></div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text">Check NLA requirement: <code>nmap --script rdp-ntlm-info -p3389 &lt;target&gt;</code></div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text">Connect (Linux): <code>xfreerdp /v:&lt;target&gt; /u:&lt;user&gt; /p:&lt;pass&gt;</code></div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text">Connect (alt): <code>rdesktop -u &lt;user&gt; -p &lt;pass&gt; &lt;target&gt;</code></div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-text">Windows native: <code>mstsc /v:&lt;target&gt;</code></div></div>
+      </div>
+    </div>
+    <div class="card"><div class="card-title">Troubleshooting</div>
+      <div class="row"><span class="row-label">CredSSP error</span><span class="row-val normal">Add <code>/sec:nla</code> or downgrade with <code>/sec:rdp</code></span></div>
+      <div class="row"><span class="row-label">Black screen</span><span class="row-val normal">Try <code>/gfx:off</code> in xfreerdp</span></div>
+      <div class="row"><span class="row-label">Cert warning</span><span class="row-val normal">Add <code>/cert-ignore</code></span></div>
+      <div class="row"><span class="row-label">Slow connection</span><span class="row-val normal">Add <code>/compression /bpp:8</code></span></div>
+    </div>
+  </div>
+  <div class="grid-2" style="margin-top:1rem;">
+    <div class="card"><div class="card-title">Enumeration before connecting</div>
+      <div class="row"><span class="row-label">rdp-sec-check</span><span class="row-val normal">Checks encryption level and NLA</span></div>
+      <div class="row"><span class="row-label">nmap --script rdp-vuln-ms12-020</span><span class="row-val normal">Checks classic RDP DoS CVE</span></div>
+      <div class="row"><span class="row-label">hydra rdp bruteforce</span><span class="row-val normal"><code>hydra -l user -P list.txt rdp://target</code></span></div>
+    </div>
+    <div class="card"><div class="card-title">Security checks</div>
+      <div class="row"><span class="row-label">NLA disabled</span><span class="row-val normal">Allows pre-auth attack surface (BlueKeep-class)</span></div>
+      <div class="row"><span class="row-label">Weak/reused creds</span><span class="row-val normal">Most common real-world RDP compromise vector</span></div>
+      <div class="row"><span class="row-label">Old Windows version</span><span class="row-val normal">Check against BlueKeep (CVE-2019-0708), DejaBlue</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- DATA ANALYST -->
+<section class="page" id="dataanalyst">
+  <div class="page-header"><div class="page-eyebrow">Deep Dive</div><h1 class="page-title">Data Analyst</h1><p class="page-desc">pandas, SQL, data cleaning, and log analysis for data-heavy CTF and forensics challenges.</p></div>
+  <div class="grid-2">
+    <div class="card"><div class="card-title">pandas quick reference</div>
+      <div class="row"><span class="row-label">pd.read_csv()</span><span class="row-val normal">Load CSV into DataFrame</span></div>
+      <div class="row"><span class="row-label">df.describe()</span><span class="row-val normal">Quick stats on numeric columns</span></div>
+      <div class="row"><span class="row-label">df[df.col &gt; x]</span><span class="row-val normal">Filter rows by condition</span></div>
+      <div class="row"><span class="row-label">df.groupby('col')</span><span class="row-val normal">Aggregate by column</span></div>
+      <div class="row"><span class="row-label">df.duplicated()</span><span class="row-val normal">Find duplicate rows â€” common flag hiding spot</span></div>
+      <div class="row"><span class="row-label">df.isnull().sum()</span><span class="row-val normal">Count missing values per column</span></div>
+    </div>
+    <div class="card"><div class="card-title">SQL quick reference</div>
+      <div class="row"><span class="row-label">SELECT * WHERE</span><span class="row-val normal">Basic filter</span></div>
+      <div class="row"><span class="row-label">GROUP BY / HAVING</span><span class="row-val normal">Aggregate + filter aggregates</span></div>
+      <div class="row"><span class="row-label">JOIN</span><span class="row-val normal">Combine related tables</span></div>
+      <div class="row"><span class="row-label">ORDER BY ... LIMIT</span><span class="row-val normal">Top-N queries â€” find outliers fast</span></div>
+      <div class="row"><span class="row-label">See also</span><span class="row-val normal">Full SQLi cheat sheet in Cheatsheets page</span></div>
+    </div>
+  </div>
+  <div class="grid-2" style="margin-top:1rem;">
+    <div class="card"><div class="card-title">Data cleaning workflow</div>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-text">Load and inspect: <code>df.head()</code>, <code>df.info()</code></div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text">Check for nulls, duplicates, and type mismatches</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text">Normalize text columns: <code>df.col.str.strip().str.lower()</code></div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text">Look for anomalies: values far from the mean, unexpected categories</div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-text">The flag is often the one row that breaks a pattern</div></div>
+      </div>
+    </div>
+    <div class="card"><div class="card-title">Log analysis</div>
+      <div class="row"><span class="row-label">awk '{print $1}'</span><span class="row-val normal">Extract a column from space-delimited logs</span></div>
+      <div class="row"><span class="row-label">sort | uniq -c | sort -rn</span><span class="row-val normal">Frequency count, most common first</span></div>
+      <div class="row"><span class="row-label">grep -c "pattern"</span><span class="row-val normal">Count matching lines</span></div>
+      <div class="row"><span class="row-label">See also</span><span class="row-val normal">Script Reference has a ready Python log parser</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="page" id="tips">
+  <div class="page-header"><div class="page-eyebrow">Reference</div><h1 class="page-title">Quick Tips</h1><p class="page-desc">The habits that separate fast solves from hours of frustration.</p></div>
+  <div class="grid-2">
+    <div class="card"><div class="card-title">When stuck</div>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-text">Re-read the challenge title and description, hints are hidden there</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text">Run <code>strings</code>, <code>file</code>, <code>exiftool</code> first</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text">Paste into CyberChef Magic mode, it auto-detects most encodings</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text">Search: "[category] [keyword] CTF writeup"</div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-text">Hit the ? button to explain any command you are unsure about</div></div>
+        <div class="step"><div class="step-num">6</div><div class="step-text">Take a break. Fresh eyes solve more than frustration does.</div></div>
+      </div>
+    </div>
+    <div class="card"><div class="card-title">Neutron Team mindset</div>
+      <div class="row"><span class="row-label normal">Question everything</span><span class="row-val normal">Nothing is what it first seems</span></div>
+      <div class="row"><span class="row-label normal">Layer by layer</span><span class="row-val normal">Clues are nested. Decode then decode again.</span></div>
+      <div class="row"><span class="row-label normal">Read the hints</span><span class="row-val normal">The challenge description IS a hint</span></div>
+      <div class="row"><span class="row-label normal">Document always</span><span class="row-val normal">Write every step tried in Notes</span></div>
+      <div class="row"><span class="row-label normal">Task Board</span><span class="row-val normal">Keep teammates updated, avoid duplicate work</span></div>
+      <div class="row"><span class="row-label normal">Post-solve</span><span class="row-val normal">Read writeups after solving to learn 10x more</span></div>
+    </div>
+  </div>
+</section>
+
+    </main>
+    <footer class="site-footer">
+      <span><strong>Neutron</strong>: Meiji &middot; Kiyoww &middot; Dreaith &middot; Tosho</span>
+      <span style="color:var(--border-l);">|</span>
+      <span>233 tools indexed</span>
+      <span style="color:var(--border-l);">|</span>
+      <span>PwnstarSheet</span>
+    </footer>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
+
